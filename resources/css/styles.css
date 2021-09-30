@@ -1,25 +1,22 @@
 /********** UNVIVERSAL STLYES **********/
 
 :root {
-	--main-clr: #f3eee9;
-	--secondary-clr: #fff;
+	--main-clr: #fff;
+	--secondary-clr: #f3eee9;
 
 	--main-txt: #000;
 	--secondary-txt: #4b4b4b;
 
 	--accent1: #950952;
-	--accent2: #ca774d;
+	--accent2: #e46c1c;
 
 	--theme-border: #000;
-
-	--link-decoration: var(--accent2);
+	--link-decoration: var(--accent1);
 }
 
-html,
-body {
+* {
 	margin: 0;
 	padding: 0;
-	box-sizing: border-box;
 }
 
 h1,
@@ -33,9 +30,45 @@ h1 {
 	font-size: 2em;
 }
 
+.heading {
+	display: flex;
+	justify-content: center;
+}
+
 h2 {
 	font-size: 1.5em;
+	text-align: center;
+	margin-bottom: 2rem;
+	text-transform: uppercase;
 }
+
+h2 span {
+	color: var(--accent1);
+	margin: 0 5px;
+}
+
+/* .cursor {
+	background-color: #000;
+	width: 3px;
+	height: 30px;
+	margin-left: 5px;
+	animation: blink 0.5s linear infinite alternate;
+} */
+
+/* @keyframes blink {
+	0% {
+		opacity: 1;
+	}
+	40% {
+		opacity: 1;
+	}
+	60% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 0;
+	}
+} */
 
 h3 {
 	font-size: 1.25em;
@@ -56,11 +89,17 @@ ul {
 }
 
 section {
-	padding: 5em 0em;
+	padding: 2rem 0rem 2rem 0rem;
+	width: 70%;
+	margin: 0 auto;
 }
 
-section:nth-child(odd) {
-	background-color: var(--main-clr);
+hr {
+	width: 40%;
+	height: 2px;
+	margin: 0 auto;
+	background-color: var(--accent2);
+	border: none;
 }
 
 /********** HEADER **********/
@@ -70,7 +109,7 @@ header {
 	justify-content: space-between;
 	align-items: center;
 	height: 75px;
-	background-color: #fff;
+	background-color: var(--accent2);
 }
 
 #theme-options {
@@ -81,7 +120,7 @@ header {
 .theme {
 	width: 30px;
 	height: 30px;
-	border: 2px solid var(--theme-border);
+	border: 1px solid var(--theme-border);
 	border-radius: 50%;
 	margin: 5px;
 	cursor: pointer;
@@ -90,7 +129,7 @@ header {
 }
 
 .theme:hover {
-	border-width: 5px;
+	border-width: 3px;
 }
 
 #light {
@@ -136,8 +175,8 @@ nav {
 
 #nav-links a:hover {
 	font-style: italic;
-	-webkit-text-shadow: 5px 5px 5px var(--accent2);
-	text-shadow: 5px 5px 5px var(--accent2);
+	-webkit-text-shadow: 5px 5px 5px var(--main-clr);
+	text-shadow: 5px 5px 5px var(--main-clr);
 }
 
 #nav-links a:hover::before,
@@ -185,19 +224,39 @@ nav {
 
 /********** INTRODUCTION  **********/
 
+#welcome-wrapper {
+	padding: 5rem 0em;
+	background-color: #e46c1c;
+	background: url(/resources/images/code.jpg);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: calc(100vh - 230px);
+	display: flex;
+	align-items: center;
+}
+
 #greeting-wrapper {
 	display: grid;
 	grid-template-areas:
 		'img greeting'
 		'img role';
 	align-items: center;
-	background-color: var(--secondary-clr);
-	border-radius: 10px;
+	background-color: var(--main-clr);
 	overflow: hidden;
 	width: 500px;
 	margin: 0 auto;
+	border-radius: 10px;
 	-webkit-box-shadow: 15px 15px 10px var(--accent2);
 	box-shadow: 15px 15px 10px var(--accent2);
+	transform: scale(1.25);
+	transition: transform ease-in 1s;
+}
+
+#greeting-wrapper:hover {
+	transform: scale(1.25);
+	transition: transform ease-in 1s;
 }
 
 #hero {
@@ -228,6 +287,31 @@ h1 > span {
 	margin: 0;
 }
 
+/********** BIOGRAPHY STYLES **********/
+
+#bio {
+	width: 75%;
+	margin: 0 auto;
+	padding: 10px;
+	text-align: center;
+	line-height: 2;
+}
+
+/********** SKILLS STYLES **********/
+
+#skills-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: 0 auto;
+}
+
+#skills img {
+	width: 100px;
+	margin: 10px;
+}
+
+/********** MEDIA QUERIES *********/
 @media screen and (max-width: 900px) {
 	#nav-toggle,
 	#hamburger {
@@ -253,6 +337,12 @@ h1 > span {
 		margin-top: 10px;
 		margin-bottom: 10px;
 	}
+
+	#greeting-wrapper,
+	#greeting-wrapper:hover {
+		transform: scale(1);
+		transition: none;
+	}
 }
 
 @media screen and (max-width: 600px) {
@@ -267,8 +357,6 @@ h1 > span {
 			'role ';
 		width: 90%;
 		margin: 0 auto;
-		-webkit-box-shadow: 0px 15px 10px var(--accent2);
-		box-shadow: 0px 15px 10px var(--accent2);
 	}
 
 	#hero {
@@ -278,6 +366,16 @@ h1 > span {
 
 	#greeting-wrapper > p {
 		text-align: center;
+	}
+
+	#bio,
+	#skills-container {
+		width: 90%;
+	}
+
+	#greeting-wrapper {
+		-webkit-box-shadow: 0px 15px 10px var(--accent2);
+		box-shadow: 0px 15px 10px var(--accent2);
 	}
 }
 
