@@ -227,7 +227,7 @@ nav {
 #welcome-wrapper {
 	padding: 5rem 0em;
 	background-color: #e46c1c;
-	background: url(/resources/images/code.jpg);
+	background: url(../images/code.jpg);
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
