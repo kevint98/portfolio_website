@@ -195,6 +195,31 @@ nav {
 	border: none;
 	cursor: pointer;
 	display: none;
+	position: absolute;
+	top: 2em;
+	right: 1em;
+}
+
+/* '.nav-open' rulesets below are only applicable in mobile mode, when the menu bar is clicked */
+
+.nav-open #nav-links {
+	transform: translateX(0);
+}
+
+.nav-open #nav-toggle {
+	position: fixed;
+}
+
+.nav-open #hamburger {
+	transform: rotate(45deg);
+}
+
+.nav-open #hamburger::before {
+	transform: rotate(90deg) translateX(10px);
+}
+
+.nav-open #hamburger::after {
+	opacity: 0;
 }
 
 #hamburger {
@@ -209,6 +234,7 @@ nav {
 	height: 5px;
 	border-radius: 1em;
 	background-color: #fff;
+	transition: transform 250ms ease-in-out;
 }
 
 #hamburger::before,
@@ -220,11 +246,11 @@ nav {
 }
 
 #hamburger::before {
-	top: 10px;
+	top: -10px;
 }
 
 #hamburger::after {
-	bottom: 10px;
+	bottom: -10px;
 }
 
 /********** INTRODUCTION  **********/
@@ -418,8 +444,8 @@ h1 > span {
 		top: 0;
 		left: 0;
 		right: 0;
-		display: none;
 		transform: translateX(100%);
+		transition: transform 250ms ease-in-out;
 		text-align: center;
 		background-color: var(--accent2);
 		border: 2px solid var(--accent2);
