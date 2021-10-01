@@ -12,11 +12,15 @@
 
 	--theme-border: #000;
 	--link-decoration: var(--accent1);
+	--link-shadow: #6e6e6e;
+	--button-color: var(--accent2);
+	--border-color: #c1c1c1;
 }
 
 * {
 	margin: 0;
 	padding: 0;
+	scroll-behavior: smooth;
 }
 
 h1,
@@ -72,6 +76,7 @@ h2 span {
 
 h3 {
 	font-size: 1.25em;
+	padding: 1rem;
 }
 
 p {
@@ -81,7 +86,7 @@ p {
 
 a {
 	text-decoration: none;
-	color: var(--secondary-txt);
+	color: var(--main-clr);
 }
 
 ul {
@@ -175,8 +180,8 @@ nav {
 
 #nav-links a:hover {
 	font-style: italic;
-	-webkit-text-shadow: 5px 5px 5px var(--main-clr);
-	text-shadow: 5px 5px 5px var(--main-clr);
+	-webkit-text-shadow: 5px 5px 5px var(--link-shadow);
+	text-shadow: 5px 5px 5px var(--link-shadow);
 }
 
 #nav-links a:hover::before,
@@ -187,7 +192,7 @@ nav {
 #nav-toggle {
 	padding: 0.5em;
 	background: transparent;
-	border: 0;
+	border: none;
 	cursor: pointer;
 	display: none;
 }
@@ -203,7 +208,7 @@ nav {
 	width: 3em;
 	height: 5px;
 	border-radius: 1em;
-	background-color: var(--secondary-txt);
+	background-color: #fff;
 }
 
 #hamburger::before,
@@ -226,13 +231,11 @@ nav {
 
 #welcome-wrapper {
 	padding: 5rem 0em;
-	background-color: #e46c1c;
 	background: url(../images/code.jpg);
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
 	width: 100%;
-	height: calc(100vh - 230px);
 	display: flex;
 	align-items: center;
 }
@@ -297,8 +300,6 @@ h1 > span {
 	line-height: 2;
 }
 
-/********** SKILLS STYLES **********/
-
 #skills-container {
 	display: flex;
 	flex-wrap: wrap;
@@ -311,7 +312,100 @@ h1 > span {
 	margin: 10px;
 }
 
+/********** PROJECTS STYLES **********/
+
+#projects {
+	text-align: center;
+}
+
+#project-container {
+	display: grid;
+	justify-content: center;
+	align-items: start;
+	gap: 30px;
+	grid-template-columns: repeat(auto-fit, 320px);
+}
+
+#project-container img {
+	width: 100%;
+	border-radius: 10px 10px 0 0;
+	display: block;
+}
+
+.project {
+	display: grid;
+	justify-items: center;
+	border-radius: 10px;
+	overflow: auto;
+	-webkit-box-shadow: 5px 5px 10px var(--link-shadow);
+	box-shadow: 3px 3px 3px var(--link-shadow);
+}
+
+.project:hover {
+	transform: scale(1.05);
+	-webkit-box-shadow: 5px 5px 10px var(--accent2);
+	box-shadow: 3px 3px 3px var(--accent2);
+}
+
+.description {
+	background-color: var(--secondary-clr);
+	padding: 5px;
+}
+
+.description button {
+	margin: 20px;
+	padding: 10px;
+	border-radius: 5px;
+	background-color: var(--button-color);
+	border: none;
+	font-size: 1.125em;
+	cursor: pointer;
+	color: var(--main-clr);
+}
+
+/********** CONTACT STLYES **********/
+
+#contact-form {
+	color: var(--secondary-txt);
+	display: block;
+	max-width: 600px;
+	margin: 0 auto;
+	border: 1px solid var(--border-color);
+	border-radius: 5px;
+	background-color: var(--secondary-clr);
+	padding: 20px;
+	font-family: 'Roboto Mono', monospace;
+}
+
+#contact-form label {
+	line-height: 2.5em;
+}
+
+.input-field {
+	background-color: var(--main-clr);
+	border: 1px solid var(--border-color);
+	border-radius: 5px;
+	font-size: 16px;
+	padding: 10px 0;
+	width: 100%;
+}
+
+#contact-form textarea {
+	min-height: 100px;
+	font-size: 16px;
+}
+
+#submit-btn {
+	background-color: var(--button-color);
+	margin-top: 10px;
+	padding: 10px 0;
+	color: #fff;
+	border: none;
+	width: 100%;
+}
+
 /********** MEDIA QUERIES *********/
+
 @media screen and (max-width: 900px) {
 	#nav-toggle,
 	#hamburger {
@@ -320,20 +414,21 @@ h1 > span {
 	}
 
 	#nav-links {
-		position: absolute;
+		position: fixed;
 		top: 0;
 		left: 0;
 		right: 0;
 		display: none;
 		transform: translateX(100%);
 		text-align: center;
-		background-color: var(--main-clr);
+		background-color: var(--accent2);
 		border: 2px solid var(--accent2);
 		margin-top: 0;
 		z-index: 5;
 	}
 
 	#nav-links li {
+		display: block;
 		margin-top: 10px;
 		margin-bottom: 10px;
 	}
@@ -376,11 +471,5 @@ h1 > span {
 	#greeting-wrapper {
 		-webkit-box-shadow: 0px 15px 10px var(--accent2);
 		box-shadow: 0px 15px 10px var(--accent2);
-	}
-}
-
-@media screen and (max-width: 360px) {
-	h1 {
-		font-size: 1.65rem;
 	}
 }
