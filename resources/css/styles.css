@@ -25,6 +25,7 @@
 
 body {
 	background-color: var(--main-clr);
+	transition: all 0.3s;
 }
 
 h1,
@@ -79,6 +80,7 @@ section {
 section:target {
 	padding-top: 75px;
 }
+
 .icon {
 	display: block;
 	width: 75px !important;
@@ -220,7 +222,7 @@ nav {
 	height: 5px;
 	border-radius: 1em;
 	background-color: #fff;
-	transition: transform 250ms ease-in-out;
+	transition: transform ease-in-out;
 }
 
 #hamburger::before,
@@ -323,8 +325,14 @@ h1 > span {
 	margin: 0 auto;
 }
 
-#skills img {
+#skills img,
+.socials img {
 	width: 100px;
+	margin: 10px;
+}
+
+i {
+	font-size: 100px;
 	margin: 10px;
 }
 
@@ -427,11 +435,7 @@ h1 > span {
 	margin-top: 20px;
 	display: flex;
 	justify-content: center;
-}
-
-.socials img {
-	margin: 20px;
-	width: 80px;
+	align-items: center;
 }
 
 footer,
@@ -508,5 +512,11 @@ footer a {
 	#greeting-wrapper {
 		-webkit-box-shadow: 0px 15px 10px var(--accent2);
 		box-shadow: 0px 15px 10px var(--accent2);
+	}
+	#contact {
+		width: 90%;
+	}
+	#contact-form {
+		max-width: 90%;
 	}
 }
