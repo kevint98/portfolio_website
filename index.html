@@ -14,9 +14,9 @@
 	<body>
 		<header>
 			<div id="theme-options">
-				<div id="light" class="theme"></div>
-				<div id="blue" class="theme"></div>
-				<div id="plum" class="theme"></div>
+				<div data-mode="light" id="light" class="theme"></div>
+				<div data-mode="blue" id="blue" class="theme"></div>
+				<div data-mode="plum" id="plum" class="theme"></div>
 			</div>
 			<nav>
 				<button id="nav-toggle">
@@ -32,7 +32,7 @@
 			</nav>
 		</header>
 		<main>
-			<!---------- INTRODUCTION ---------->
+			<!-- INTRODUCTION -->
 
 			<section id="welcome-wrapper">
 				<div id="greeting-wrapper">
@@ -41,12 +41,12 @@
 					<p>Full-Stack Developer</p>
 				</div>
 			</section>
-			<!---------- ABOUT ME ---------->
+			<!--ABOUT ME -->
 
 			<section id="about">
+				<img class="icon" src="resources/images/about.png" alt="">
 				<div class="heading">
-					<h2><span>&lt;</span>About Me<span>/&gt;</span></h2>
-					<!-- <span class="cursor"></span> -->
+					<h2>About Me</h2>
 				</div>
 				<div id="bio">
 					<p>
@@ -60,12 +60,12 @@
 			</section>
 			<hr />
 
-			<!---------- SKILLS ---------->
+			<!-- SKILLS -->
 
 			<section id="skills">
+				<img class="icon" src="resources/images/skills.png" alt="">
 				<div class="heading">
-					<h2><span>&lt;</span>Skills<span>/&gt;</span></h2>
-					<!-- <span class="cursor"></span> -->
+					<h2>Skills</h2>
 				</div>
 				<div id="skills-container">
 					<img
@@ -86,19 +86,19 @@
 					/>
 					<a href="https://github.com/kevint98" target="_blank"
 						><img
-							src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+						class="github"  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
 							alt="GitHub icon"
 					/></a>
 				</div>
 			</section>
 			<hr />
 
-			<!---------- PROJECTS ---------->
+			<!-- PROJECTS -->
 
 			<section id="projects">
+				<img class="icon" src="resources/images/projects.png" alt="">
 				<div class="heading">
-					<h2><span>&lt;</span>Projects<span>/&gt;</span></h2>
-					<!-- <span class="cursor"></span> -->
+					<h2>Projects</h2>
 				</div>
 				<div id="project-container">
 					<div class="project" id="excursion">
@@ -112,11 +112,17 @@
 							<br />
 							<p>Skills Used: HTML, CSS</p>
 							<br />
-							<a href="https://kevint98.github.io/excursion/" target="_blank"
-								><button class="live-site">Live Site</button></a
+							<a
+								class="button"
+								href="https://kevint98.github.io/excursion/"
+								target="_blank"
+								>Live Site</a
 							>
-							<a href="https://github.com/kevint98/excursion" target="_blank"
-								><button class="view-code">View Code</button></a
+							<a
+								class="button"
+								href="https://github.com/kevint98/excursion"
+								target="_blank"
+								>View Code</a
 							>
 						</div>
 					</div>
@@ -135,14 +141,16 @@
 							<p>Skills Used: HTML, CSS</p>
 							<br />
 							<a
+								class="button"
 								href="https://kevint98.github.io/company_website_flexbox/"
 								target="_blank"
-								><button class="live-site">Live Site</button></a
+								>Live Site</a
 							>
 							<a
+								class="button"
 								href="https://github.com/kevint98/company_website_flexbox"
 								target="_blank"
-								><button class="view-code">View Code</button></a
+								>View Code</a
 							>
 						</div>
 					</div>
@@ -158,14 +166,16 @@
 							<p>Skills Used: HTML, CSS</p>
 							<br />
 							<a
+								class="button"
 								href="https://kevint98.github.io/Book_em_club_website/"
 								target="_blank"
-								><button class="live-site">Live Site</button></a
+								>Live Site</a
 							>
 							<a
+								class="button"
 								href="https://github.com/kevint98/Book_em_club_website"
 								target="_blank"
-								><button class="view-code">View Code</button></a
+								>View Code</a
 							>
 						</div>
 					</div>
@@ -184,10 +194,12 @@
 							<br />
 							<p>Skills Used: JavaScript</p>
 							<br />
+
 							<a
+								class="button"
 								href="https://github.com/kevint98/Mixed_Messages"
 								target="_blank"
-								><button class="view-code">View Code</button></a
+								>View Code</a
 							>
 						</div>
 					</div>
@@ -195,26 +207,44 @@
 			</section>
 			<hr />
 
-			<!---------- CONTACT --------->
+			<!-- CONTACT -->
 
 			<section id="contact">
+				<img class="icon" src="resources/images/contact.png" alt="">
 				<div class="heading">
-					<h2><span>&lt;</span>Contact<span>/&gt;</span></h2>
-					<!-- <span class="cursor"></span> -->
+					<h2>Contact</h2>
 				</div>
 				<form id="contact-form" action="#">
 					<label for="name">Full Name</label>
 					<input type="text" name="name" id="name" class="input-field" />
 					<label for="subject">Subject</label>
-					<input type="text" name="subject" id="subject " class="input-field" />
+					<input type="text" name="subject" id="subject" class="input-field" />
 					<label for="email">Email</label>
 					<input type="email" name="email" id="email" class="input-field" />
 					<label for="message">Message</label>
 					<textarea name="message" id="message" class="input-field"></textarea>
 					<input id="submit-btn" type="submit" value="Send" />
 				</form>
+				<div class="socials">
+					<a href="https://github.com/kevint98" target="_blank"
+						><img
+							class="github" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+							alt="GitHub icon"
+					/></a>
+					<a
+						href="https://www.linkedin.com/in/kevin-thompson-273230151/"
+						target="_blank"
+						><img
+							id="linked-in" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-plain.svg"
+							alt="LinkedIn icon"
+					/></a>
+					
+				</div>
 			</section>
 		</main>
+		<footer>
+			<p><div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div></p>
+		</footer>
 		<script src="script.js"></script>
 	</body>
 </html>
